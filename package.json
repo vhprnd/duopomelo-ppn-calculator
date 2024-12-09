@@ -1,6 +1,6 @@
 {
   "name": "duopomelo-ppn-calculator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A program for counting PPN in Duopomelo.ID",
   "main": "src/index.js",
   "keywords": [
