@@ -1,13 +1,23 @@
 /**
- * Menghitung PPN dan menghasilkan nilai before PPN, after PPN, dan grand total.
- * @param {number} itemQty - Input Quantity Item.
- * @param {number} itemPrice - Input Harga Item.
- * @param {number} percentDiscount - Input Diskon Item (%).
- * @param {number} pecentVAT - Input VAT Item (%).
- * @returns {Object} - Objek hasil perhitungan seperti: { item_qty, item_price, percent_discount, percent_vat, total_dpp, total_discount, total_vat }
+ * @typedef {Object} PriceCalculator
+ * @property {function(number, number, number, number): number} calculatePrice - The function for calculating price.
  */
 
-function calculatePPN(itemQty, itemPrice, percentDiscount, pecentVAT) {
+/**
+ * PriceCalculator Module.
+ * @type {PriceCalculator}
+ */
+
+/**
+ * Menghitung PPN dan menghasilkan nilai before PPN, after PPN, dan grand total.
+ * @param {number} itemQty - Input The Item Quantity.
+ * @param {number} itemPrice - Input The Item Price.
+ * @param {number} percentDiscount - Input The Discount Item (%).
+ * @param {number} pecentVAT - Input The VAT Item (%).
+ * @returns {Object} - The object of the calculation like: { item_qty, item_price, percent_discount, percent_vat, total_dpp, total_discount, total_vat }
+ */
+
+function calculatePrice(itemQty, itemPrice, percentDiscount, pecentVAT) {
   try {
     const item_qty = processNumbers(itemQty, "itemQty");
     const item_price = processNumbers(itemPrice, "itemPrice");
@@ -46,4 +56,4 @@ function processNumbers(data, type) {
   return data;
 }
 
-module.exports = { calculatePPN };
+module.exports = { calculatePrice };
