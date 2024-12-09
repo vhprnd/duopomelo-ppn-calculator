@@ -46,4 +46,4 @@ function processNumbers(data, type) {
   return data;
 }
 
-module.exports = calculatePPN;
+module.exports = { calculatePPN };
