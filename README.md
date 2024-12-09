@@ -12,6 +12,7 @@
   total_vat: 147162.40
 }
 ```
+- Returning the exact rounding value.
 
 # Installing
 
@@ -67,5 +68,15 @@ And the output is:
   total_discount: 148648.50, 
 }
 */
+
+```
+
+Or you want to rounding the number?
+```
+import { numberRounding } from 'duopomelo-ppn-calculator';
+//const { numberRounding } = require('duopomelo-ppn-calculator'); // legacy way
+
+const theNumber = numberRounding(3.1415926535897, 3);
+console.log(theFinalPrice); // output: 3.142
 
 ```
