@@ -1,0 +1,21 @@
+{
+  "name": "duopomelo-ppn-calculator",
+  "version": "1.0.0",
+  "description": "A program for counting PPN in Duopomelo.ID",
+  "main": "src/index.js",
+  "keywords": [
+    "PPN",
+    "calculator",
+    "NuxtJS",
+    "NodeJS",
+    "Duopomelo.ID"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Ary Setiyawan",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
