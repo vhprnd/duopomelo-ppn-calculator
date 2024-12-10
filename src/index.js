@@ -32,13 +32,11 @@ function calculatePrice(itemQty, itemPrice, percentDiscount, pecentVAT) {
     const dpp_vat = numberRounding((dpp_item - dpp_discount) * percent_vat / 100, 2); // Column K
     const dpp_rounding = numberRounding(discounted_price_with_vat - (dpp_item - dpp_discount + dpp_vat), 2); // Column L
     const dpp_item_final = numberRounding((dpp_item + dpp_rounding), 2); // Column M
-    const dpp_discount_final = numberRounding(dpp_item_final * percent_discount / 100, 2); // Column N
-    const dpp_vat_final = numberRounding((dpp_item_final - dpp_discount_final) * percent_vat / 100, 2); // Column O
 
     const total_price = numberRounding(item_qty * item_price, 2)
     const total_dpp = numberRounding(dpp_item_final * item_qty, 2); // Column P
-    const total_discount = numberRounding(dpp_discount_final * item_qty, 2); // Column Q
-    const total_vat = numberRounding(dpp_vat_final * item_qty, 2); // Column R
+    const total_discount = numberRounding(dpp_discount * item_qty, 2); // Column Q
+    const total_vat = numberRounding(dpp_vat * item_qty, 2); // Column R
 
     return { item_qty, item_price, percent_discount, percent_vat, total_price, total_dpp, total_discount, total_vat };
   } catch (error) {
