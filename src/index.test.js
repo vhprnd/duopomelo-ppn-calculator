@@ -56,11 +56,27 @@ describe('Positive Test Case Check', () => {
       item_price: 15000, 
       percent_discount: 10, 
       percent_vat: 11, 
+      total_price: 1650000.00,
       total_dpp: 1486486.10, 
       total_discount: 148648.50, 
       total_vat: 147162.40
     });
   });
+
+  test('Calculation should return the correct value (vat and discount 0)', () => {
+    const result = calculatePrice(110, 15000, 0, 0);
+    expect(result).toMatchObject({
+      item_qty: 110, 
+      item_price: 15000, 
+      percent_discount: 0, 
+      percent_vat: 0, 
+      total_price: 1650000.00,
+      total_dpp: 1650000.00, 
+      total_discount: 0, 
+      total_vat: 0
+    });
+  });
+
   test('Calculation should return the correct rounded value', () => {
     const result = numberRounding(3.1415926535897, 3);
     expect(result).toBe(3.142);

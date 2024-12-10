@@ -1,17 +1,5 @@
 # Features
-- Calculating the final price, discount, and vat with the following example of the output:
-
-``` 
-{
-  item_qty: 110, 
-  item_price: 15000, 
-  percent_discount: 10, 
-  percent_vat: 11, 
-  total_dpp: 1486486.10, 
-  total_discount: 148648.50, 
-  total_vat: 147162.40
-}
-```
+- Calculating the final price, discount, and vat.
 - Returning the exact rounding value.
 
 # Installing
@@ -35,10 +23,10 @@ pnpm add duopomelo-ppn-calculator
 
 Once the package is installed, you can import the library using import or require approach:
 ```
-import { calculatePrice } from 'duopomelo-ppn-calculator';
+import { calculatePrice, numberRounding } from 'duopomelo-ppn-calculator';
 ```
 ```
-const { calculatePrice } = require('duopomelo-ppn-calculator');
+const { calculatePrice, numberRounding } = require('duopomelo-ppn-calculator');
 ```
 
 # Example
@@ -64,8 +52,10 @@ And the output is:
   item_price: 15000, 
   percent_discount: 10, 
   percent_vat: 11, 
-  total_dpp: 1486486.10, 
-  total_discount: 148648.50, 
+  total_price: 1650000,
+  total_dpp: 1486486.1, 
+  total_discount: 148648.5, 
+  total_vat: 147162.4 
 }
 */
 
