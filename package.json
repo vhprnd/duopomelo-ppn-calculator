@@ -1,6 +1,6 @@
 {
   "name": "duopomelo-ppn-calculator",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "A program for price counting in Duopomelo.ID",
   "main": "dist/bundle.cjs",
   "module": "dist/bundle.mjs",
