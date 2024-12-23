@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @typedef {Object} PriceCalculator
  * @property {function(number, number, number, number): number} calculatePrice - The function for calculating price.
@@ -18,7 +20,7 @@
  * @returns {Object} - The object of the calculation like: { item_qty, item_price, percent_discount, percent_vat, total_price, total_dpp, total_discount, total_vat }
  */
 
-export function calculatePrice(itemQty, itemPrice, percentDiscount, percentVAT) {
+function calculatePrice(itemQty, itemPrice, percentDiscount, percentVAT) {
   try {
     const item_qty = processNumbers(itemQty, "itemQty");
     const item_price = processNumbers(itemPrice, "itemPrice");
@@ -33,7 +35,7 @@ export function calculatePrice(itemQty, itemPrice, percentDiscount, percentVAT) 
     const dpp_rounding = numberRounding(discounted_price_with_vat - (dpp_item - dpp_discount + dpp_vat), 2); // Column L
     const dpp_item_final = numberRounding((dpp_item + dpp_rounding), 2); // Column M
 
-    const total_price = numberRounding(item_qty * item_price, 2)
+    const total_price = numberRounding(item_qty * item_price, 2);
     const total_dpp = numberRounding(dpp_item_final * item_qty, 2); // Column P
     const total_discount = numberRounding(dpp_discount * item_qty, 2); // Column Q
     const total_vat = numberRounding(dpp_vat * item_qty, 2); // Column R
@@ -50,7 +52,7 @@ export function calculatePrice(itemQty, itemPrice, percentDiscount, percentVAT) 
  * @param {number} roundDigit - The rounded value (will be ceiled).
  * @returns {number} - The exact rounded number.
  */
-export function numberRounding(numberToBeRounded, roundDigit = 0) {
+function numberRounding(numberToBeRounded, roundDigit = 0) {
   try {
     const valueTobeRounded = processNumbers(numberToBeRounded, 'numberToBeRounded');
     const theDigitRound = processNumbers(roundDigit, 'roundDigit');
@@ -69,3 +71,6 @@ function processNumbers(data, type) {
 
   return data;
 }
+
+exports.calculatePrice = calculatePrice;
+exports.numberRounding = numberRounding;

@@ -1,4 +1,4 @@
-const { calculatePrice, numberRounding } = require("./index");
+import { calculatePrice, numberRounding } from './index';
 
 describe('Negative Test Case Check', () => {
   test('Should sending an error for invalid itemQty', () => {
