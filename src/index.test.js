@@ -13,9 +13,9 @@ describe('Negative Test Case Check', () => {
     const result = calculatePrice(10, 100000);
     expect(result).toBe('500. Please defined percentDiscount correctly.');
   });
-  test('Should sending an error for invalid pecentVAT', () => {
+  test('Should sending an error for invalid percentVAT', () => {
     const result = calculatePrice(10, 100000, 10);
-    expect(result).toBe('500. Please defined pecentVAT correctly.');
+    expect(result).toBe('500. Please defined percentVAT correctly.');
   });
 
   test('Should sending an error for invalid type of itemQty', () => {
@@ -30,9 +30,9 @@ describe('Negative Test Case Check', () => {
     const result = calculatePrice(10, 10000, '10', 11);
     expect(result).toBe('500. Please defined percentDiscount correctly.');
   });
-  test('Should sending an error for invalid type of pecentVAT', () => {
+  test('Should sending an error for invalid type of percentVAT', () => {
     const result = calculatePrice(10, 10000, 10, '11');
-    expect(result).toBe('500. Please defined pecentVAT correctly.');
+    expect(result).toBe('500. Please defined percentVAT correctly.');
   });
   test('Should sending an error for invalid numberToBeRounded', () => {
     const result = numberRounding();

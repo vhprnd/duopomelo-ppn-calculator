@@ -14,16 +14,16 @@
  * @param {number} itemQty - Input The Item Quantity.
  * @param {number} itemPrice - Input The Item Price.
  * @param {number} percentDiscount - Input The Discount Item (%).
- * @param {number} pecentVAT - Input The VAT Item (%).
+ * @param {number} percentVAT - Input The VAT Item (%).
  * @returns {Object} - The object of the calculation like: { item_qty, item_price, percent_discount, percent_vat, total_price, total_dpp, total_discount, total_vat }
  */
 
-function calculatePrice(itemQty, itemPrice, percentDiscount, pecentVAT) {
+function calculatePrice(itemQty, itemPrice, percentDiscount, percentVAT) {
   try {
     const item_qty = processNumbers(itemQty, "itemQty");
     const item_price = processNumbers(itemPrice, "itemPrice");
     const percent_discount = processNumbers(percentDiscount, "percentDiscount");
-    const percent_vat = processNumbers(pecentVAT, "pecentVAT");
+    const percent_vat = processNumbers(percentVAT, "percentVAT");
 
     const dpp_division = numberRounding(1 + (percent_vat / 100), 2);
     const discounted_price_with_vat = item_price - numberRounding((item_price * percent_discount / 100), 2); // Column H

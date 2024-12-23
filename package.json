@@ -2,7 +2,12 @@
   "name": "duopomelo-ppn-calculator",
   "version": "1.2.5",
   "description": "A program for price counting in Duopomelo.ID",
-  "main": "src/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "exports": {
+    "require": "./dist/index.cjs",
+    "import": "./dist/index.mjs"
+  },
   "homepage": "https://github.com/vhprnd/duopomelo-ppn-calculator#readme",
   "keywords": [
     "vat",
@@ -13,11 +18,16 @@
     "Duopomelo.ID"
   ],
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "rollup -c"
   },
   "author": "Ary Setiyawan",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^29.7.0"
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "jest": "^29.7.0",
+    "rollup": "^4.29.1"
   }
 }
